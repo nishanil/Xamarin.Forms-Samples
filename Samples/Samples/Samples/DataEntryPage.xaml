@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Samples;assembly=Samples"             
+             x:Class="Samples.DataEntryPage"  Padding="50, 20">
+  <StackLayout>
+    <Entry Placeholder="Enter a valid email address">
+      <Entry.Behaviors>
+        <local:EmailValidatorBehavior/>
+      </Entry.Behaviors>
+    </Entry>
+    <Entry Placeholder="Enter a number ">
+      <Entry.Behaviors>
+        <local:NumberValidatorBehavior />
+      </Entry.Behaviors>
+    </Entry>
+    <Entry Placeholder="Enter age">
+      <Entry.Behaviors>
+        <local:NumberValidatorBehavior />
+        <local:MaxLengthValidator  MaxLength="2"/>
+      </Entry.Behaviors>
+    </Entry>
+    <Picker Title ="Select Gender..">
+      <Picker.Behaviors>
+        <local:PickerBehavior x:Name="pickerBehavior" />
+      </Picker.Behaviors>
+      <Picker.Items>
+        <x:String></x:String>
+        <x:String>Male</x:String>
+        <x:String>Female</x:String>
+      </Picker.Items>
+    </Picker>
+    <Label Text="{Binding Source={x:Reference pickerBehavior}, Path=SelectedItem}"></Label>
+  </StackLayout>
+</ContentPage>
