@@ -31,5 +31,71 @@
       </Picker.Items>
     </Picker>
     <Label Text="{Binding Source={x:Reference pickerBehavior}, Path=SelectedItem}"></Label>
+
+    <StackLayout Orientation="Horizontal">
+      <Grid >
+        <Grid.Behaviors>
+          <local:StarBehavior x:Name="starOne" GroupName="myStar"/>
+        </Grid.Behaviors>
+        <Image x:Name="starBlankOne"
+                Source="{local:ImageResource Samples.Images.star_outline.png}" />
+
+        <Image x:Name="starSelectedOne"
+                Source="{local:ImageResource Samples.Images.star_selected.png}"
+                IsVisible="{Binding Source={x:Reference starOne},
+                                    Path=IsStarred}"/>
+      </Grid>
+      <Grid >
+        <Grid.Behaviors>
+          <local:StarBehavior x:Name="starTwo" GroupName="myStar"/>
+        </Grid.Behaviors>
+        <Image x:Name="starBlankTwo"
+                Source="{local:ImageResource Samples.Images.star_outline.png}" />
+
+        <Image x:Name="starSelectedTwo"
+                Source="{local:ImageResource Samples.Images.star_selected.png}"
+                IsVisible="{Binding Source={x:Reference starTwo},
+                                    Path=IsStarred}"/>
+      </Grid>
+       <Grid >
+        <Grid.Behaviors>
+          <local:StarBehavior x:Name="starThree" GroupName="myStar"/>
+        </Grid.Behaviors>
+        <Image x:Name="starBlankThree"
+                Source="{local:ImageResource Samples.Images.star_outline.png}" />
+
+        <Image x:Name="starSelectedThree"
+                Source="{local:ImageResource Samples.Images.star_selected.png}"
+                IsVisible="{Binding Source={x:Reference starThree},
+                                    Path=IsStarred}"/>
+      </Grid>
+       <Grid >
+        <Grid.Behaviors>
+          <local:StarBehavior x:Name="starFour" GroupName="myStar"/>
+        </Grid.Behaviors>
+        <Image x:Name="starBlankFour"
+                Source="{local:ImageResource Samples.Images.star_outline.png}" />
+
+        <Image x:Name="starSelectedFour"
+                Source="{local:ImageResource Samples.Images.star_selected.png}"
+                IsVisible="{Binding Source={x:Reference starFour},
+                                    Path=IsStarred}"/>
+      </Grid>
+       <Grid >
+        <Grid.Behaviors>
+          <local:StarBehavior x:Name="starFive" GroupName="myStar"/>
+        </Grid.Behaviors>
+        <Image x:Name="starBlankFive"
+                Source="{local:ImageResource Samples.Images.star_outline.png}" />
+
+        <Image x:Name="starSelectedFive"
+                Source="{local:ImageResource Samples.Images.star_selected.png}"
+                IsVisible="{Binding Source={x:Reference starFive},
+                                    Path=IsStarred}"/>
+      </Grid>
+      
+    </StackLayout>
+
   </StackLayout>
+  
 </ContentPage>
