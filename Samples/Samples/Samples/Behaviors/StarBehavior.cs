@@ -25,6 +25,17 @@ namespace Samples
             set { SetValue(GroupNameProperty, value); }
             get { return (string)GetValue(GroupNameProperty); }
         }
+
+        public static readonly BindableProperty RatingProperty =
+           BindableProperty.Create("Rating",
+                                   typeof(int),
+                                   typeof(StarBehavior), default(int));
+
+        public int Rating
+        {
+            set { SetValue(RatingProperty, value); }
+            get { return (int)GetValue(RatingProperty); }
+        }
         
         static void OnGroupNameChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -105,6 +116,7 @@ namespace Samples
                  }
 
                  bool itemReached = false;
+                 int count = 1, position = 0;
                  // all positions to left IsStarred = true and all position to the right is false
                  foreach (var item in behaviors)
                  {
@@ -116,11 +128,18 @@ namespace Samples
                      {
                          itemReached = true;
                          item.IsStarred = true;
+                         position = count;
                      }
                      if (item != behavior && itemReached)
                          item.IsStarred = false;
+                     
+                     item.Rating = position;
+                     count++;
                  }
+                 
              }
+
+            
         }
 
         public StarBehavior()

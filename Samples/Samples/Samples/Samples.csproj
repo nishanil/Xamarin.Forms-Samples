@@ -45,6 +45,7 @@
     </Compile>
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatingConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

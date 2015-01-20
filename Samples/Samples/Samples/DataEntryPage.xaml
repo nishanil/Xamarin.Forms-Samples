@@ -95,7 +95,15 @@
       </Grid>
       
     </StackLayout>
-
+    <StackLayout>
+      <StackLayout.Resources>
+        <ResourceDictionary>
+          <local:RatingConverter x:Key="ratingConverter" />
+        </ResourceDictionary>
+      </StackLayout.Resources>
+        <Label Text="{Binding Source={x:Reference starFive},
+                                    Path=Rating, Converter={StaticResource ratingConverter}}" ></Label>
+    </StackLayout>
   </StackLayout>
   
 </ContentPage>
