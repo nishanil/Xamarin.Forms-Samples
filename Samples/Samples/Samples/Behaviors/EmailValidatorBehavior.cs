@@ -30,6 +30,7 @@ namespace Samples
             bindable.TextChanged += HandleTextChanged;
         }
 
+
         void HandleTextChanged(object sender, TextChangedEventArgs e)
         {
             IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250))) ? true : false;
@@ -39,6 +40,7 @@ namespace Samples
         protected override void OnDetachingFrom(Entry bindable)
         {
             bindable.TextChanged -= HandleTextChanged;
+
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
@@ -40,9 +40,11 @@
     <Compile Include="Behaviors\NumberValidatorBehavior.cs" />
     <Compile Include="Behaviors\PickerBehavior.cs" />
     <Compile Include="Behaviors\StarBehavior.cs" />
+    <Compile Include="BooleanToObjectConverter.cs" />
     <Compile Include="DataEntryPage.xaml.cs">
       <DependentUpon>DataEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GenderConverter.cs" />
     <Compile Include="ImageResourceExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingConverter.cs" />
@@ -64,7 +66,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Images\error.png" />
+    <EmbeddedResource Include="Images\success.png" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\star_outline.png" />
     <EmbeddedResource Include="Images\star_selected.png" />

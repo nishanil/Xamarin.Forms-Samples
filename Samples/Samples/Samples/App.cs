@@ -12,7 +12,7 @@ namespace Samples
         public App()
         {
             // The root page of your application
-            MainPage = new DataEntryPage();
+            MainPage = new NavigationPage(new DataEntryPage());
         }
 
         protected override void OnStart()

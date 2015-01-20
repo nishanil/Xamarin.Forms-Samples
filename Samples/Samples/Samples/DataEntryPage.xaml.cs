@@ -13,6 +13,7 @@ namespace Samples
         public DataEntryPage()
         {
             InitializeComponent();
+            Title = "Hola!";
         }
     }
 }
