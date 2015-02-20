@@ -33,7 +33,7 @@ namespace Samples
 
         void HandleTextChanged(object sender, TextChangedEventArgs e)
         {
-            IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250))) ? true : false;
+            IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
             ((Entry)sender).TextColor = IsValid ? Color.Default : Color.Red;
         }
 
