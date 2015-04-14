@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherCheck.Pages.WeatherDetailPage" BackgroundImage="background.png">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="FontFamily">
+         
+         <OnPlatform x:TypeArguments="x:String">
+            <OnPlatform.iOS>AvenirNext-Light</OnPlatform.iOS>
+            <OnPlatform.Android>Roboto Thin</OnPlatform.Android>
+            <OnPlatform.WinPhone></OnPlatform.WinPhone>
+        </OnPlatform>
+        </Setter>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+	<StackLayout Orientation="Vertical" Padding="0, 20, 0, 5">
+    <Label Text="{Binding CityAndCountry}" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large"></Label>
+    <Label Text="{Binding WeatherCondition}" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Small"></Label>
+    
+    <Label Text="{Binding Temparature}" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="45"></Label>
+    <Label Text="{Binding WeatherDate}" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Small"></Label>
+    
+    <Label Text="{Binding Sunrise}" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Small"></Label>
+    <Label Text="{Binding Sunset}" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Small"></Label>
+    
+    <StackLayout  Orientation="Horizontal" Padding="20,0,20,0" Spacing="0">
+    <StackLayout HorizontalOptions="StartAndExpand" Spacing="0">
+     
+    <Label Text="Atmosphere" TextColor="White" VerticalOptions="Center" HorizontalOptions="StartAndExpand" FontSize="Large"></Label>
+    
+    <Label Text="{Binding Humidity}" TextColor="White"  HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
+    <Label Text="{Binding Pressure}" TextColor="White"  HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
+    <Label Text="{Binding Visibility}" TextColor="White"  HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
+    
+    </StackLayout>
+    <StackLayout HorizontalOptions="EndAndExpand" Spacing="0">
+     
+    <Label Text="Wind" TextColor="White" VerticalOptions="Center" HorizontalOptions="EndAndExpand" FontSize="Large"></Label>
+    
+    <Label Text="{Binding Chill}" TextColor="White"  HorizontalOptions="EndAndExpand" FontSize="Small"></Label>
+    <Label Text="{Binding Direction}" TextColor="White"  HorizontalOptions="EndAndExpand" FontSize="Small"></Label>
+    <Label Text="{Binding Speed}" TextColor="White"  HorizontalOptions="EndAndExpand" FontSize="Small"></Label>
+    
+    </StackLayout>
+
+  </StackLayout>
+        <Label Text="Forecast" TextColor="White" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large"></Label>
+    
+        
+  <ListView BackgroundColor="Transparent" ItemsSource="{Binding Forecasts}" SeparatorVisibility="None">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+        <!--<StackLayout VerticalOptions="Center" Orientation="Horizontal" Spacing="0" Padding="20,0,20,0">
+         <Label VerticalOptions="Center" Text="{Binding Day}" TextColor="White"  HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
+          <Image VerticalOptions="Center" Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20"></Image>
+        
+         <Label VerticalOptions="Center" Text="{Binding High}" TextColor="White"  HorizontalOptions="End" FontSize="Small"></Label>
+         <Label VerticalOptions="Center" Text="{Binding Low}" TextColor="Gray"  HorizontalOptions="End" FontSize="Small" ></Label>
+
+    </StackLayout>-->
+        <Grid Padding="10,0,10,0" >
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+          
+          </Grid.ColumnDefinitions>
+          <Label Grid.Column="0" VerticalOptions="Center" Text="{Binding Day}" TextColor="White"  HorizontalOptions="StartAndExpand" FontSize="Small"></Label>
+          <Image Grid.Column="1" VerticalOptions="Center" Source="{Binding ImageSource}" HorizontalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20"></Image>
+        
+         <Label Grid.Column="2" VerticalOptions="Center" Text="{Binding High}" TextColor="White"  HorizontalOptions="EndAndExpand" FontSize="Small"></Label>
+         <Label Grid.Column="3" VerticalOptions="Center" Text="{Binding Low}" TextColor="Gray"  HorizontalOptions="EndAndExpand" FontSize="Small" ></Label>
+
+        </Grid>
+           </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  </StackLayout>
+
+</ContentPage>
