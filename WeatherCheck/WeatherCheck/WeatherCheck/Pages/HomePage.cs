@@ -44,7 +44,7 @@ namespace WeatherCheck.Pages
                 IsBusy = false;
             };
 
-          
+
             var searchBarLayout = new StackLayout
             {
                 Spacing = 12,
@@ -73,7 +73,7 @@ namespace WeatherCheck.Pages
             Content = new StackLayout
             {
                 Padding = new Thickness(5, 5, 5, 5),
-                Children = { searchBarLayout, temperatureList }
+                Children = { searchBarLayout, temperatureList}
             };
         }
 

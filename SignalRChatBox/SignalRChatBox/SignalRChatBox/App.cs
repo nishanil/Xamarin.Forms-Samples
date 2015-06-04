@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using WeatherCheck.Pages;
+using Microsoft.AspNet.SignalR.Client;
+using Microsoft.AspNet.SignalR.Client.Hubs;
 using Xamarin.Forms;
 
-namespace WeatherCheck
+namespace SignalRChatBox
 {
     public class App : Application
     {
+
+
         public App()
         {
+            
             // The root page of your application
             MainPage = new NavigationPage(new HomePage());
         }

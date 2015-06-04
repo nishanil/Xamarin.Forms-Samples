@@ -8,7 +8,7 @@
         <Setter Property="FontFamily">
          
          <OnPlatform x:TypeArguments="x:String">
-            <OnPlatform.iOS>AvenirNext-Light</OnPlatform.iOS>
+            <OnPlatform.iOS>Chalkduster</OnPlatform.iOS>
             <OnPlatform.Android>Roboto Thin</OnPlatform.Android>
             <OnPlatform.WinPhone></OnPlatform.WinPhone>
         </OnPlatform>
