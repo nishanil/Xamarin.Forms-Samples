@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataTemplateSelector.IncomingViewCell"
+             xmlns:plugin="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:local="clr-namespace:DataTemplateSelector;assembly=DataTemplateSelector">
+<Grid ColumnSpacing="2" Padding="5">
+ <Grid.ColumnDefinitions>
+   <ColumnDefinition Width="40"></ColumnDefinition>
+   <ColumnDefinition Width="*"></ColumnDefinition>
+   <ColumnDefinition Width="40"></ColumnDefinition>
+ </Grid.ColumnDefinitions>
+  <Grid.RowDefinitions>
+    <RowDefinition Height="*"></RowDefinition>
+    <RowDefinition Height="Auto"></RowDefinition>
+
+  </Grid.RowDefinitions>
+  <plugin:CircleImage
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HeightRequest="35"
+                    WidthRequest="35"
+                    BorderThickness="2"
+                    BorderColor="#03A9F4"
+                    Aspect="AspectFill"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" Source="{local:ImageResource Source=DataTemplateSelector.baboon.jpg}" ></plugin:CircleImage>
+<Frame Grid.Row="0" OutlineColor="Transparent" HasShadow="False" Grid.Column="1" BackgroundColor="#03A9F4">
+  <Label TextColor="White" Text="{Binding Text}" />
+</Frame>
+<Label FontSize="Micro" Grid.Row="1" Grid.Column="1" Text="{Binding MessagDateTime, StringFormat='{0:MM/dd/yyyy hh:mm tt}'}" TextColor="Gray"></Label>  
+</Grid>
+</ViewCell>

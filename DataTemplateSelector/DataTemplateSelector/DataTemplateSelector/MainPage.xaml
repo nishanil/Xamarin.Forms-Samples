@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataTemplateSelector.MainPage"
+             xmlns:local="clr-namespace:DataTemplateSelector;assembly=DataTemplateSelector">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:MyDataTemplateSelector x:Key="MessageTemplateSelector"></local:MyDataTemplateSelector>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <RelativeLayout>
+  <ListView x:Name="MessagesListView" 
+            ItemTemplate="{StaticResource MessageTemplateSelector}" 
+            ItemsSource="{Binding Messages}"
+            HasUnevenRows="True" 
+            ItemSelected="MyListView_OnItemSelected"
+            ItemTapped="MyListView_OnItemTapped"
+            SeparatorVisibility="None"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+   </ListView>
+    <Grid x:Name="MessageControls" RowSpacing="1" ColumnSpacing="2" Padding="5"
+          BackgroundColor="#EFEFF4"
+          VerticalOptions="FillAndExpand"
+          HorizontalOptions="FillAndExpand"
+          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=MessagesListView, Property=Height,Factor=.91,Constant=0}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToView, ElementName=MessagesListView, Property=Height,Factor=.09,Constant=0}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Entry Grid.Column="0" HeightRequest="25" Placeholder="Message" Text="{Binding OutGoingText}"></Entry>
+      <Button Grid.Column="1" Text="Send" Command="{Binding SendCommand}"></Button>
+    </Grid>
+
+  </RelativeLayout>
+</ContentPage>
