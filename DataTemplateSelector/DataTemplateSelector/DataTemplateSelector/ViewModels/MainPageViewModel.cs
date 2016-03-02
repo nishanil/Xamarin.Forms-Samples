@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,9 +14,9 @@ namespace DataTemplateSelector
     public class MainPageViewModel : BaseViewModel
     {
 
-        private List<MessageViewModel> messagesList;
+        private ObservableCollection<MessageViewModel> messagesList;
 
-        public List<MessageViewModel> Messages
+        public ObservableCollection<MessageViewModel> Messages
         {
             get { return messagesList; }
             set { messagesList = value; RaisePropertyChanged(); }
@@ -36,7 +37,7 @@ namespace DataTemplateSelector
         {
               // Initialize with default values
 
-            Messages = new List<MessageViewModel>
+            Messages = new ObservableCollection<MessageViewModel>
             {
                 new MessageViewModel { Text = "Hi Squirrel! \uD83D\uDE0A", IsIncoming = true, MessagDateTime = DateTime.Now.AddMinutes(-25)},
                 new MessageViewModel { Text = "Hi Baboon, How are you? \uD83D\uDE0A", IsIncoming = false, MessagDateTime = DateTime.Now.AddMinutes(-24)},
