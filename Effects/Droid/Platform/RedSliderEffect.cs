@@ -11,10 +11,6 @@ namespace Effects.Droid
 {
 	public class RedSliderEffect : PlatformEffect
 	{
-		public RedSliderEffect()
-		{
-		}
-
 		protected override void OnAttached()
 		{
 			var seekBar = (SeekBar)Control;
@@ -24,7 +20,7 @@ namespace Effects.Droid
 
 		protected override void OnDetached()
 		{
-			
+			// Use this method if you wish to reset the control to orginal state
 		}
 	}
 }

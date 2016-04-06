@@ -33,7 +33,7 @@ namespace Effects
 				Title = "Effects",
 				Content = new StackLayout
 				{
-					VerticalOptions = LayoutOptions.Center,
+					VerticalOptions = LayoutOptions.Start,
 					Padding = 50,
 					Children = {
 						redSlider,
